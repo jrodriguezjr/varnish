@@ -117,6 +117,29 @@ This sets the file to write varnish configuration into.
 
 This determines which template puppet should use for the varnish configuration.
 
+<<<<<<< HEAD
+=======
+####`driftfile`
+
+This sets the location of the driftfile for varnish.
+
+####`keys_controlkey`
+
+Which of the keys is used as the control key.
+
+####`keys_enable`
+
+Should the varnish keys functionality be enabled.
+
+####`keys_file`
+
+Location of the keys file.
+
+####`keys_requestkey`
+
+Which of the keys is used as the request key.
+
+>>>>>>> d6f49b7695e98a55364720b277587fa6ea9a25bb
 ####`package_ensure`
 
 This can be set to 'present' or 'latest' or a specific version to choose the
@@ -126,6 +149,24 @@ varnish package to be installed.
 
 This determines the name of the package to install.
 
+<<<<<<< HEAD
+=======
+####`panic`
+
+This determines if varnish should 'panic' in the event of a very large clock skew.
+We set this to false if you're on a virtual machine by default as they don't
+do a great job with keeping time.
+
+####`preferred_servers`
+
+List of varnish servers to prefer.  Will append prefer for any server in this list
+that also appears in the servers list.
+
+####`restrict`
+
+This sets the restrict options in the varnish configuration.
+
+>>>>>>> d6f49b7695e98a55364720b277587fa6ea9a25bb
 ####`servers`
 
 This selects the servers to use for varnish peers.
@@ -154,8 +195,13 @@ This module has been built on and tested against Puppet 2.7 and higher.
 The module has been tested on:
 
 * Debian 6/7
+<<<<<<< HEAD
 * Ubuntu 12.04
 * CentOS 5/6
+=======
+* CentOS 5/6
+* Ubuntu 12.04
+>>>>>>> d6f49b7695e98a55364720b277587fa6ea9a25bb
 
 Testing on other platforms has been light and cannot be guaranteed. 
 
@@ -167,7 +213,11 @@ huge number of platforms and myriad of hardware, software, and deployment
 configurations that Puppet is intended to serve.
 
 We want to keep it as easy as possible to contribute changes so that our
+<<<<<<< HEAD
 modules work in your environment. There are <a href=""></a> few guidelines that we need
+=======
+modules work in your environment. There are a few guidelines that we need
+>>>>>>> d6f49b7695e98a55364720b277587fa6ea9a25bb
 contributors to follow so that we can have a chance of keeping on top of things.
 
 You can read the complete module contribution guide [on the Puppet Labs wiki.](http://projects.puppetlabs.com/projects/module-site/wiki/Module_contributing)

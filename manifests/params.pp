@@ -11,11 +11,15 @@ class varnish::params {
   $vbackend_port     = '80'
 
   case $::osfamily {
-    'Debian': {
-      $config             = '/etc/varnish/defualt.vcl'
-      $config_template    = 'varnish/default.vcl.DEBIAN.erb'
-      $package_name       = [ 'varnish' ]
-      $service_name       = 'varnish'
+    'Debian': {               
+      $config                 = '/etc/default/varnish'
+      $config_template        = 'varnish/varnish.DEBIAN.erb'
+      $varnishlog_config      = '/etc/default/varnishlog'
+      $varnishlog_template    = 'varnish/varnishlog.DEBIAN.erb'
+      $vcl_config             = '/etc/varnish/defualt.vcl'
+      $vcl_config_template    = 'varnish/defaults.vcl.DEBIAN.erb'
+      $package_name           = [ 'varnish' ]
+      $service_name           = 'varnish'
     }
     # 'RedHat': {
     #   $config          = '/etc/ntp.conf'

@@ -36,10 +36,6 @@ class varnish (
   validate_string($vcl_config)         
   validate_string($vcl_config_template)
 
-  # Autoupdate - Deprecated
-  if $autoupdate {
-    notice('autoupdate parameter has been deprecated and replaced with package_ensure.  Set this to latest for the same behavior as autoupdate => true.')
-  }
 
   # Include other classes
   include '::varnish::install'

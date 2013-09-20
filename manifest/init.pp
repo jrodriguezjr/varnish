@@ -2,17 +2,8 @@ class varnish (
   $autoupdate        = $varnish::params::autoupdate,
   $config            = $varnish::params::config,
   $config_template   = $varnish::params::config_template,
-#  $driftfile         = $varnish::params::driftfile,
-#  $keys_enable       = $varnish::params::keys_enable,
-#  $keys_file         = $varnish::params::keys_file,
-#  $keys_controlkey   = $varnish::params::keys_controlkey,
-#  $keys_requestkey   = $varnish::params::keys_requestkey,
-#  $keys_trusted      = $varnish::params::keys_trusted,
   $package_ensure    = $varnish::params::package_ensure,
   $package_name      = $varnish::params::package_name,
-#  $panic             = $varnish::params::panic,
-#  $preferred_servers = $varnish::params::preferred_servers,
-#  $restrict          = $varnish::params::restrict,
   $servers           = $varnish::params::servers,
   $service_enable    = $varnish::params::service_enable,
   $service_ensure    = $varnish::params::service_ensure,
@@ -22,16 +13,8 @@ class varnish (
 
   validate_absolute_path($config)
   validate_string($config_template)
-#  validate_absolute_path($driftfile)
-#  validate_bool($keys_enable)
-#  validate_re($keys_controlkey, ['^\d+$', ''])
-#  validate_re($keys_requestkey, ['^\d+$', ''])
-#  validate_array($keys_trusted)
   validate_string($package_ensure)
   validate_array($package_name)
-#  validate_bool($panic)
-#  validate_array($preferred_servers)
-#  validate_array($restrict)
   validate_array($servers)
   validate_bool($service_enable)
   validate_string($service_ensure)

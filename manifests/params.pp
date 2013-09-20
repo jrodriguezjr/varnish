@@ -1,14 +1,15 @@
 # Params
 class varnish::params {
 
-  $autoupdate        = false
-  $package_ensure    = 'present'
-  $service_enable    = true
-  $service_ensure    = 'running'
-  $service_manage    = true
-  $vfrontend_port    = '8080'
-  $vbackend_servers  = [ '127.0.0.1', ]
-  $vbackend_port     = '80'
+  $autoupdate         = false
+  $package_ensure     = 'present'
+  $service_enable     = true
+  $service_ensure     = 'running'
+  $service_manage     = true
+  $vfrontend_port     = '8080'
+  $vbackend_servers   = [ '127.0.0.1', ]
+  $vbackend_port      = '80'
+  $varnishlog_enabled = '1'
 
   case $::osfamily {
     'Debian': {               

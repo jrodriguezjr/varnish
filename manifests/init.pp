@@ -16,6 +16,7 @@ class varnish (
   $varnishlog_template  = $varnish::params::varnishlog_template,
   $vcl_config           = $varnish::params::vcl_config, 
   $vcl_config_template  = $varnish::params::vcl_config_template,
+  $varnishlog_enabled   = $varnish::params::varnishlog_enabled,
 ) inherits varnish::params {
 
   # Input Param Validations

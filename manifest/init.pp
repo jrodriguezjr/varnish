@@ -4,22 +4,25 @@ class varnish (
   $config_template   = $varnish::params::config_template,
   $package_ensure    = $varnish::params::package_ensure,
   $package_name      = $varnish::params::package_name,
-  $servers           = $varnish::params::servers,
   $service_enable    = $varnish::params::service_enable,
   $service_ensure    = $varnish::params::service_ensure,
   $service_manage    = $varnish::params::service_manage,
   $service_name      = $varnish::params::service_name,
+  $vbackend_servers  = $varnish::params::vbackend_servers,
+  $vbackend_port     = $varnish::params::vbackend_port,
 ) inherits varnish::params {
 
+  # Input Param Validations
   validate_absolute_path($config)
   validate_string($config_template)
   validate_string($package_ensure)
   validate_array($package_name)
-  validate_array($servers)
   validate_bool($service_enable)
   validate_string($service_ensure)
   validate_bool($service_manage)
   validate_string($service_name)
+  validate_array($backend_servers)
+  validate_string($backend_port)
 
   if $autoupdate {
     notice('autoupdate parameter has been deprecated and replaced with package_ensure.  Set this to latest for the same behavior as autoupdate => true.')

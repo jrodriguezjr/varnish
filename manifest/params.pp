@@ -1,20 +1,20 @@
 class ntp::params {
 
   $autoupdate        = false
-  $config_template   = 'varnish/varnish.vcl.erb'
   $package_ensure    = 'present'
   $service_enable    = true
   $service_ensure    = 'running'
   $service_manage    = true
+  $vfrontend_port    = '8080'
+  $vbackend_servers  = [ '127.0.0.1', ]
+  $vbackend_port     = '80'
 
   case $::osfamily {
     'Debian': {
-      $config          = '/etc/varnish/varnish.vcl'
-      $package_name    = [ 'varnish' ]
-      $service_name    = 'varnish'
-      $servers         = [
-        '',
-      ]
+      $config             = '/etc/varnish/defualt.vcl'
+      $config_template    = 'varnish/default.vcl.DEBIAN.erb'
+      $package_name       = [ 'varnish' ]
+      $service_name       = 'varnish'
     }
     # 'RedHat': {
     #   $config          = '/etc/ntp.conf'

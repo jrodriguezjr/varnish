@@ -1,4 +1,4 @@
-#
+# Install
 class varnish::install inherits varnish {
 
   package { 'varnish':

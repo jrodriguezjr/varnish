@@ -1,4 +1,4 @@
-#
+# Services
 class varnish::service inherits varnish {
 
   if ! ($service_ensure in [ 'running', 'stopped' ]) {

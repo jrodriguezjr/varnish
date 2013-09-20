@@ -1,3 +1,4 @@
+# Params
 class varnish::params {
 
   $autoupdate        = false

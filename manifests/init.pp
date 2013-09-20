@@ -1,3 +1,4 @@
+# Main Class
 class varnish (
   $autoupdate        = $varnish::params::autoupdate,
   $config            = $varnish::params::config,
@@ -21,8 +22,8 @@ class varnish (
   validate_string($service_ensure)
   validate_bool($service_manage)
   validate_string($service_name)
-  validate_array($backend_servers)
-  validate_string($backend_port)
+  # validate_array($backend_servers)
+  # validate_string($backend_port)
 
   if $autoupdate {
     notice('autoupdate parameter has been deprecated and replaced with package_ensure.  Set this to latest for the same behavior as autoupdate => true.')

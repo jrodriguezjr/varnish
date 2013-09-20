@@ -1,4 +1,4 @@
-#
+# Varnish Cofiguration
 class varnish::config inherits varnish {
 
   file { $config:

@@ -17,8 +17,8 @@ class varnish::params {
       $config_template        = 'varnish/varnish.DEBIAN.erb'
       $varnishlog_config      = '/etc/default/varnishlog'
       $varnishlog_template    = 'varnish/varnishlog.DEBIAN.erb'
-      $vcl_config             = '/etc/varnish/defualt.vcl'
-      $vcl_config_template    = 'varnish/defaults.vcl.DEBIAN.erb'
+      $vcl_config             = '/etc/varnish/default.vcl'
+      $vcl_config_template    = 'varnish/default.vcl.DEBIAN.erb'
       $package_name           = [ 'varnish' ]
       $service_name           = 'varnish'
     }

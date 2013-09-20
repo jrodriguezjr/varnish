@@ -1,4 +1,4 @@
-name    'jrodriguezjr-varnish'
+name    'varnish'
 version '1.0.0'
 source 'git@github.com:jrodriguezjr/varnish.git
 author 'jrodriguezjr'

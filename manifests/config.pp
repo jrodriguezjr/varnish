@@ -1,4 +1,7 @@
-# Configuration Settings
+# == Class: varnish::config
+#
+# varnish config settings
+#
 class varnish::config inherits varnish {
 
   # main varnish config
@@ -9,14 +12,6 @@ class varnish::config inherits varnish {
     mode    => '0644',
     content => template($config_template),
   }
-  # vanishlog cofiguration
-  file { $varnishlog_config:
-    ensure  => file,
-    owner   => 0,
-    group   => 0,
-    mode    => '0644',
-    content => template($varnishlog_template),
-  }
   # VCL template
   file { $vcl_config:
     ensure  => file,
@@ -25,5 +20,20 @@ class varnish::config inherits varnish {
     mode    => '0644',
     content => template($vcl_config_template),
   }
-
+  # vanishlog config template
+  file { $varnishlog_config:
+    ensure  => file,
+    owner   => 0,
+    group   => 0,
+    mode    => '0644',
+    content => template($varnishlog_template),
+  }
+  # Varnishncsa log template
+  file { $varnishncsa_config:
+    ensure  => file,
+    owner   => 0,
+    group   => 0,
+    mode    => '0644',
+    content => template($vcl_config_template),
+  }
 }

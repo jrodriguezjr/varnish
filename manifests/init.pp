@@ -1,4 +1,7 @@
-# Main Class
+# == Class: varnish
+#
+# varnish main class
+#
 class varnish (
   $autoupdate           = $varnish::params::autoupdate,
   $config               = $varnish::params::config,
@@ -14,12 +17,12 @@ class varnish (
   $vfrontend_port       = $varnish::params::vfrontend_port,
   $varnishlog_config    = $varnish::params::varnishlog_config,
   $varnishlog_template  = $varnish::params::varnishlog_template,
-  $vcl_config           = $varnish::params::vcl_config, 
+  $vcl_config           = $varnish::params::vcl_config,
   $vcl_config_template  = $varnish::params::vcl_config_template,
   $varnishlog_enabled   = $varnish::params::varnishlog_enabled,
 ) inherits varnish::params {
 
-  # Input Param Validations
+  # Sanity Checks: Input Param Validations
   validate_absolute_path($config)
   validate_string($config_template)
   validate_string($package_ensure)
@@ -33,7 +36,7 @@ class varnish (
   validate_string($vfrontend_port)
   validate_string($varnishlog_config)
   validate_string($varnishlog_template)
-  validate_string($vcl_config)         
+  validate_string($vcl_config)
   validate_string($vcl_config_template)
 
 

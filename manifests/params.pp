@@ -12,6 +12,8 @@ class varnish::params {
   $vfrontend_port       = '8080'
   $vbackend_servers     = [ '127.0.0.1', ]
   $vbackend_port        = '80'
+  $altbackend_servers     = []
+  $altbackend_port        = ''
   $varnishlog_enabled   = '1'
   $varnishncsa_enabled  = '1'
 

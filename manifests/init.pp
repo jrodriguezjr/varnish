@@ -3,23 +3,27 @@
 # varnish main class
 #
 class varnish (
-  $autoupdate           = $varnish::params::autoupdate,
-  $config               = $varnish::params::config,
-  $config_template      = $varnish::params::config_template,
-  $package_ensure       = $varnish::params::package_ensure,
-  $package_name         = $varnish::params::package_name,
-  $service_enable       = $varnish::params::service_enable,
-  $service_ensure       = $varnish::params::service_ensure,
-  $service_manage       = $varnish::params::service_manage,
-  $service_name         = $varnish::params::service_name,
-  $vbackend_servers     = $varnish::params::vbackend_servers,
-  $vbackend_port        = $varnish::params::vbackend_port,
-  $vfrontend_port       = $varnish::params::vfrontend_port,
-  $varnishlog_config    = $varnish::params::varnishlog_config,
-  $varnishlog_template  = $varnish::params::varnishlog_template,
-  $vcl_config           = $varnish::params::vcl_config,
-  $vcl_config_template  = $varnish::params::vcl_config_template,
-  $varnishlog_enabled   = $varnish::params::varnishlog_enabled,
+  $autoupdate               = $varnish::params::autoupdate,
+  $config                   = $varnish::params::config,
+  $config_template          = $varnish::params::config_template,
+  $package_ensure           = $varnish::params::package_ensure,
+  $package_name             = $varnish::params::package_name,
+  $service_enable           = $varnish::params::service_enable,
+  $service_ensure           = $varnish::params::service_ensure,
+  $service_manage           = $varnish::params::service_manage,
+  $service_varnish          = $varnish::params::service_varnish,
+  $vbackend_servers         = $varnish::params::vbackend_servers,
+  $vbackend_port            = $varnish::params::vbackend_port,
+  $vbackend_hostrewrite     = $varnish::params::vbackend_hostrewrite,
+  $altbackend_servers       = $varnish::params::altbackend_servers,
+  $altbackend_port          = $varnish::params::altbackend_port,
+  $altbackend_hostrewrite   = $varnish::params::altbackend_hostrewrite,
+  $vfrontend_port           = $varnish::params::vfrontend_port,
+  $varnishlog_config        = $varnish::params::varnishlog_config,
+  $varnishlog_template      = $varnish::params::varnishlog_template,
+  $vcl_config               = $varnish::params::vcl_config,
+  $vcl_config_template      = $varnish::params::vcl_config_template,
+  $varnishlog_enabled       = $varnish::params::varnishlog_enabled,
 ) inherits varnish::params {
 
   # Sanity Checks: Input Param Validations
@@ -30,7 +34,7 @@ class varnish (
   validate_bool($service_enable)
   validate_string($service_ensure)
   validate_bool($service_manage)
-  validate_string($service_name)
+  validate_string($service_varnish)
   validate_array($vbackend_servers)
   validate_string($vbackend_port)
   validate_string($vfrontend_port)

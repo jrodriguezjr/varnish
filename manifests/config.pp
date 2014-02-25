@@ -34,6 +34,6 @@ class varnish::config inherits varnish {
     owner   => 0,
     group   => 0,
     mode    => '0644',
-    content => template($vcl_config_template),
+    content => template($varnishncsa_template),
   }
 }

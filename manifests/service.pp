@@ -9,27 +9,27 @@ class varnish::service inherits varnish {
   }
 
   if $service_manage == true {
-    # Varnish service
+    # Run Varnish service
     service { 'varnish':
       ensure     => $service_ensure,
       enable     => $service_enable,
-      name       => $service_name,
+      name       => $service_varnish,
       hasstatus  => true,
       hasrestart => true,
     }
-    # Varnish log service
+    # Run Varnish log service
     service { 'varnishlog':
       ensure     => $service_ensure,
       enable     => $service_enable,
-      name       => $service_name,
+      name       => $service_varnishlog,
       hasstatus  => true,
       hasrestart => true,
     }
-    # Varnishncsa service
+    # Run Varnishncsa service
     service { 'varnishncsa':
       ensure     => $service_ensure,
       enable     => $service_enable,
-      name       => $service_name,
+      name       => $service_varnishncsa,
       hasstatus  => true,
       hasrestart => true,
     }
